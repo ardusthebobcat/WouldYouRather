@@ -1,0 +1,19 @@
+<% if @question.any? %>
+  <% @question.each do |question| %>
+  <div>
+    <%= question.answer_A %><img src="<%= question.picture_A %>"><br>
+    <%= question.answer_B %><img src="<%= question.picture_B %>"><br>
+    <%= link_to '[+/-]', edit_question_path(question) %>
+    <%= link_to '[x]', question_path(question), data: {confirm: 'You sure?', method: 'delete'} %>
+  </div>
+  <% end %>
+<% else %>
+  <h3>Ask a question.</h3>
+<% end %>
+
+<%= link_to 'Add Question', new_question_path  %>
+add new
+
+ edit
+
+ delete

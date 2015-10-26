@@ -1,0 +1,15 @@
+<h3>Would you Rather</h3>
+<%= form_for @question do |f| %>
+  <%= f.label :answer_A %>
+  <%= f.text_field :answer_A %>
+  <%= f.label :picture_A %>
+  <%= f.text_field :picture_A %>
+<br />
+  <%= f.label :answer_B %>
+  <%= f.text_field :answer_B %>
+  <%= f.label :picture_B %>
+  <%= f.text_field :picture_B %>
+<br />
+
+  <%= f.submit %>
+<% end %>
