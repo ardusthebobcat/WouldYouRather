@@ -1,7 +1,8 @@
-<% if @question.any? %>
-  <% @question.each do |question| %>
+<% if @questions.any? %>
+  <% @questions.each do |question| %>
   <div>
-    <%= question.answer_A %><img src="<%= question.picture_A %>"><br>
+    <h3>Would You Rather</h3>
+    <%= render partial: 'vote_A', collection: @questions, :locals => {:@question => question, :votes_A => 'true'} %><br>
     <%= question.answer_B %><img src="<%= question.picture_B %>"><br>
     <%= link_to '[+/-]', edit_question_path(question) %>
     <%= link_to '[x]', question_path(question), data: {confirm: 'You sure?', method: 'delete'} %>
@@ -11,9 +12,4 @@
   <h3>Ask a question.</h3>
 <% end %>
 
-<%= link_to 'Add Question', new_question_path  %>
-add new
-
- edit
-
- delete
+<%= link_to 'Add Question', new_question_path, class: "btn btn-success"  %>
