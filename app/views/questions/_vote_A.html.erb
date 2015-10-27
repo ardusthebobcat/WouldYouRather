@@ -2,7 +2,7 @@
 <%= f.hidden_field(:votes_A, :value => @question.votes_A + 1) %>
 <%= f.hidden_field(:total, :value => @question.total + 1) %>
 
-<%= f.submit "Vote A", :type => :image, :src => @question.picture_A.url(:thumb) %>
+<%= f.submit "Vote A", :type => :image, :src => @question.picture_A.url(:medium) %>
 
 <% end %>
 <%= @question.answer_A %>
