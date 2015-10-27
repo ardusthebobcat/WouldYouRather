@@ -10,12 +10,12 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.new(question_params)
     if @question.save
-      flash[:notice] = "Question successfully added!"
+      flash[:alert] = "Question successfully added!"
       respond_to do |format|
-      format.html {redirect_to root_path}
-      format.js
-    end
-  else
+        format.html {redirect_to root_path}
+        format.js
+      end
+    else
       render :new
     end
   end
@@ -27,7 +27,7 @@ class QuestionsController < ApplicationController
   def update
     @question = Question.find(params[:id])
 
-  # binding.pry
+
     # if params[:votes_A]
     #     if params[:votes_A] == nil
     #       question_vote_params[:votes_A] == 1
@@ -35,6 +35,7 @@ class QuestionsController < ApplicationController
     #     question_vote_params[:votes_A] =+1
     #
     #   question_vote_params[:total]  =+ 1
+    # binding.pry
       @question.update(question_params)
       redirect_to root_path
 

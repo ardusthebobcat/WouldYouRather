@@ -1,7 +1,7 @@
 <div class="container">
   <div id="add_output"></div>
-    <% if @questions.any? %>
     <div id="test_name">
+    <% if @questions.any? %>
       <% @questions.each do |question| %>
         <div class="panel panel-primary">
           <div class="panel-heading"><h3>Would You Rather</h3></div>
@@ -23,8 +23,8 @@
             <%= link_to 'edit', edit_question_path(question), class: 'btn btn-warning' %>
             <%= link_to 'delete', question_path(question), class: 'btn btn-danger', data: {confirm: 'You sure?', method: 'delete'} %>
           </div>
-        </div>
       <% end %>
+      </div>
     </div>
     <% else %>
       <h3>Ask a question.</h3>
@@ -32,5 +32,3 @@
 <hr>
 </div>
 <br />
-<%= link_to 'Add Question', new_question_path, class: "btn btn-success"  %>
-<%= link_to 'Add Question AJAX', new_question_path,  remote: true %>
